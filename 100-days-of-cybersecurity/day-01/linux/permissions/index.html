@@ -9,29 +9,32 @@
     <meta name="generator" content="Retype 3.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>E Books</title>
-    <meta name="title" content="E Books">
+    <title>Linux File Permissions</title>
+    <meta name="title" content="Linux File Permissions">
+    <meta name="description" content="Understanding Linux file permissions is essential for system security and effective file management.">
 
     <!-- Canonical -->
-    <link rel="canonical" href="/resource/e-books/">
+    <link rel="canonical" href="/100-days-of-cybersecurity/day-01/linux/permissions/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="/resource/e-books/">
-    <meta property="og:title" content="E Books">
+    <meta property="og:url" content="/100-days-of-cybersecurity/day-01/linux/permissions/">
+    <meta property="og:title" content="Linux File Permissions">
+    <meta property="og:description" content="Understanding Linux file permissions is essential for system security and effective file management.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="/resource/e-books/">
-    <meta property="twitter:title" content="E Books">
+    <meta property="twitter:url" content="/100-days-of-cybersecurity/day-01/linux/permissions/">
+    <meta property="twitter:title" content="Linux File Permissions">
+    <meta property="twitter:description" content="Understanding Linux file permissions is essential for system security and effective file management.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.779961456452" rel="stylesheet">
+    <link href="../../../../resources/css/retype.css?v=3.6.0.779961456452" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.779961456452" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.779961456452" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../../resources/js/config.js?v=3.6.0.779961456452" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../../resources/js/lunr.js?v=3.6.0.779961456452" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -46,7 +49,7 @@
                 <!-- Logo -->
                 <div class="flex items-center justify-between h-full py-2 md:w-75">
                     <div class="flex items-center px-2 md:px-6">
-                        <a id="docs-site-logo" href="../../" class="flex items-center leading-snug text-2xl">
+                        <a id="docs-site-logo" href="../../../../" class="flex items-center leading-snug text-2xl">
                             <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">NEODay</span>
                         </a>
                     </div>
@@ -214,12 +217,222 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="e-books" class="break-words">
+<doc-anchor-target id="linux-file-permissions" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#e-books">#</doc-anchor-trigger>
-        <span>E Books</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#linux-file-permissions">#</doc-anchor-trigger>
+        <span>Linux File Permissions</span>
     </h1>
 </doc-anchor-target>
+<doc-anchor-target id="a-deep-dive-into-linux-file-permissions-understanding-and-managing-access">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#a-deep-dive-into-linux-file-permissions-understanding-and-managing-access">#</doc-anchor-trigger>
+        <span>A Deep Dive into Linux File Permissions: Understanding and Managing Access</span>
+    </h2>
+</doc-anchor-target>
+<p>Understanding Linux file permissions is essential for system security and effective file management. Permissions control who can access or modify files and directories. In Linux, file permissions can be represented in two ways: symbolic mode and octal mode. This guide will help you grasp these concepts with clear examples and explanations.</p>
+<doc-anchor-target id="1-symbolic-mode-permissions">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#1-symbolic-mode-permissions">#</doc-anchor-trigger>
+        <span><strong>1. Symbolic Mode Permissions</strong></span>
+    </h4>
+</doc-anchor-target>
+<p>In symbolic mode, file permissions are displayed in a string of characters. This format shows the type of file and the access rights for the owner, group, and others.</p>
+<doc-anchor-target id="structure-of-file-permissions">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#structure-of-file-permissions">#</doc-anchor-trigger>
+        <span><strong>Structure of File Permissions</strong></span>
+    </h5>
+</doc-anchor-target>
+<p>Here’s how a typical file listing might look:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">drwxr-xr-x 2 root root 4.0K Sep 18 10:46 example_dir
+-rw-r--r-- 1 root root   19 Sep 18 10:45 example_file.txt</code></pre>
+</doc-codeblock></div>
+<p><strong>1. File Type</strong></p>
+<ul>
+<li><strong>First Character</strong>: Indicates the file type.
+<ul>
+<li><code v-pre>d</code>: Directory</li>
+<li><code v-pre>-</code>: Regular file</li>
+<li><code v-pre>l</code>: Symbolic link</li>
+<li><code v-pre>b</code>: Block device</li>
+<li><code v-pre>c</code>: Character device</li>
+<li><code v-pre>p</code>: Named pipe</li>
+<li><code v-pre>s</code>: Socket</li>
+</ul>
+</li>
+</ul>
+<p><strong>2. Owner Permissions</strong></p>
+<ul>
+<li><strong>Next Three Characters</strong>: Permissions for the file owner.
+<ul>
+<li><code v-pre>r</code>: Read (view contents)</li>
+<li><code v-pre>w</code>: Write (modify contents)</li>
+<li><code v-pre>x</code>: Execute (run as a program or enter a directory)</li>
+<li><code v-pre>-</code>: No permission</li>
+</ul>
+</li>
+</ul>
+<p><strong>3. Group Permissions</strong></p>
+<ul>
+<li><strong>Next Three Characters</strong>: Permissions for the file’s group.
+<ul>
+<li>Same as owner permissions (<code v-pre>r</code>, <code v-pre>w</code>, <code v-pre>x</code>, <code v-pre>-</code>)</li>
+</ul>
+</li>
+</ul>
+<p><strong>4. Other Users&#x27; Permissions</strong></p>
+<ul>
+<li><strong>Last Three Characters</strong>: Permissions for all other users.
+<ul>
+<li>Same as owner permissions (<code v-pre>r</code>, <code v-pre>w</code>, <code v-pre>x</code>, <code v-pre>-</code>)</li>
+</ul>
+</li>
+</ul>
+<doc-anchor-target id="examples">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#examples">#</doc-anchor-trigger>
+        <span><strong>Examples</strong></span>
+    </h5>
+</doc-anchor-target>
+<ol>
+<li><p><strong><code v-pre>-rw-r--r--</code></strong> (for <code v-pre>example_file.txt</code>):</p>
+<ul>
+<li><code v-pre>-</code>: Regular file</li>
+<li><code v-pre>rw-</code>: Owner (<code v-pre>root</code>) can read and write.</li>
+<li><code v-pre>r--</code>: Group (<code v-pre>root</code>) can read only.</li>
+<li><code v-pre>r--</code>: Others can read only.</li>
+</ul>
+</li>
+<li><p><strong><code v-pre>drwxr-xr-x</code></strong> (for <code v-pre>example_dir</code>):</p>
+<ul>
+<li><code v-pre>d</code>: Directory</li>
+<li><code v-pre>rwx</code>: Owner can read, write, and execute.</li>
+<li><code v-pre>r-x</code>: Group can read and execute.</li>
+<li><code v-pre>r-x</code>: Others can read and execute.</li>
+</ul>
+</li>
+</ol>
+<doc-anchor-target id="2-octal-numeric-mode-permissions">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#2-octal-numeric-mode-permissions">#</doc-anchor-trigger>
+        <span><strong>2. Octal (Numeric) Mode Permissions</strong></span>
+    </h4>
+</doc-anchor-target>
+<p>In octal mode, permissions are represented by a three-digit number. Each digit corresponds to the permissions for the owner, group, and others.</p>
+<doc-anchor-target id="understanding-octal-values">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#understanding-octal-values">#</doc-anchor-trigger>
+        <span><strong>Understanding Octal Values</strong></span>
+    </h5>
+</doc-anchor-target>
+<ul>
+<li><code v-pre>r</code> (Read) = 4</li>
+<li><code v-pre>w</code> (Write) = 2</li>
+<li><code v-pre>x</code> (Execute) = 1</li>
+</ul>
+<p>To represent different permissions, you add these values together:</p>
+<ul>
+<li><code v-pre>rwx</code> = <code v-pre>4 + 2 + 1 = 7</code></li>
+<li><code v-pre>rw-</code> = <code v-pre>4 + 2 + 0 = 6</code></li>
+<li><code v-pre>r--</code> = <code v-pre>4 + 0 + 0 = 4</code></li>
+</ul>
+<doc-anchor-target id="converting-symbolic-to-octal">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#converting-symbolic-to-octal">#</doc-anchor-trigger>
+        <span><strong>Converting Symbolic to Octal</strong></span>
+    </h5>
+</doc-anchor-target>
+<ol>
+<li><p><strong><code v-pre>-rw-r--r--</code></strong>:</p>
+<ul>
+<li>Owner (<code v-pre>rw-</code>): <code v-pre>4 + 2 = 6</code></li>
+<li>Group (<code v-pre>r--</code>): <code v-pre>4 + 0 = 4</code></li>
+<li>Others (<code v-pre>r--</code>): <code v-pre>4 + 0 = 4</code></li>
+<li><strong>Octal Representation</strong>: <code v-pre>644</code></li>
+</ul>
+</li>
+<li><p><strong><code v-pre>drwxr-xr-x</code></strong>:</p>
+<ul>
+<li>Owner (<code v-pre>rwx</code>): <code v-pre>4 + 2 + 1 = 7</code></li>
+<li>Group (<code v-pre>r-x</code>): <code v-pre>4 + 0 + 1 = 5</code></li>
+<li>Others (<code v-pre>r-x</code>): <code v-pre>4 + 0 + 1 = 5</code></li>
+<li><strong>Octal Representation</strong>: <code v-pre>755</code></li>
+</ul>
+</li>
+</ol>
+<doc-anchor-target id="3-changing-permissions">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#3-changing-permissions">#</doc-anchor-trigger>
+        <span><strong>3. Changing Permissions</strong></span>
+    </h4>
+</doc-anchor-target>
+<p>You can modify file permissions using both symbolic and octal modes.</p>
+<doc-anchor-target id="using-symbolic-mode">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#using-symbolic-mode">#</doc-anchor-trigger>
+        <span><strong>Using Symbolic Mode</strong></span>
+    </h5>
+</doc-anchor-target>
+<ul>
+<li><p><strong>Add Permission</strong>: <code v-pre>chmod u+x file.sh</code></p>
+<ul>
+<li><code v-pre>u</code>: User (owner)</li>
+<li><code v-pre>+x</code>: Adds execute permission</li>
+</ul>
+</li>
+<li><p><strong>Remove Permission</strong>: <code v-pre>chmod g-w file.sh</code></p>
+<ul>
+<li><code v-pre>g</code>: Group</li>
+<li><code v-pre>-w</code>: Removes write permission</li>
+</ul>
+</li>
+<li><p><strong>Set Exact Permissions</strong>: <code v-pre>chmod u=rwx,g=rx,o=r file.sh</code></p>
+<ul>
+<li>Sets specific permissions for user, group, and others.</li>
+</ul>
+</li>
+</ul>
+<doc-anchor-target id="using-octal-mode">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#using-octal-mode">#</doc-anchor-trigger>
+        <span><strong>Using Octal Mode</strong></span>
+    </h5>
+</doc-anchor-target>
+<ul>
+<li><strong>Set Permissions</strong>: <code v-pre>chmod 755 file.sh</code>
+<ul>
+<li><strong><code v-pre>755</code></strong> translates to <code v-pre>rwxr-xr-x</code>:
+<ul>
+<li>Owner: <code v-pre>rwx</code> (7)</li>
+<li>Group: <code v-pre>r-x</code> (5)</li>
+<li>Others: <code v-pre>r-x</code> (5)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<doc-anchor-target id="4-summary-of-file-listing-columns">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#4-summary-of-file-listing-columns">#</doc-anchor-trigger>
+        <span><strong>4. Summary of File Listing Columns</strong></span>
+    </h4>
+</doc-anchor-target>
+<p>In a file listing:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">drwxr-xr-x 2 root root 4.0K Sep 18 10:46 example_dir
+-rw-r--r-- 1 root root   19 Sep 18 10:45 example_file.txt</code></pre>
+</doc-codeblock></div>
+<ul>
+<li><strong>Column 1</strong>: Permissions (<code v-pre>drwxr-xr-x</code> or <code v-pre>-rw-r--r--</code>)</li>
+<li><strong>Column 2</strong>: Number of hard links (<code v-pre>2</code> or <code v-pre>1</code>)</li>
+<li><strong>Column 3</strong>: Owner (<code v-pre>root</code>)</li>
+<li><strong>Column 4</strong>: Group (<code v-pre>root</code>)</li>
+<li><strong>Column 5</strong>: Size (<code v-pre>4.0K</code> or <code v-pre>19</code>)</li>
+<li><strong>Column 6</strong>: Last modification date and time (<code v-pre>Sep 18 10:46</code>)</li>
+<li><strong>Column 7</strong>: File or directory name (<code v-pre>example_dir</code> or <code v-pre>example_file.txt</code>)</li>
+</ul>
+<p>Grasping Linux file permissions is vital for maintaining system security and managing file access. By understanding both symbolic and octal modes, you can effectively control who has access to your files and directories. Mastering these concepts ensures you can protect your data and manage your Linux environment efficiently.</p>
 
                                 
                                 <!-- Required only on API pages -->
@@ -229,20 +442,20 @@
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../cve/cve-2022-0847/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../../100-days-of-cybersecurity/day-01/linux/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">CVE-​2022-​0847</span>
+                                                <span class="block mt-1">Linux</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../resource/e-books/coding/python/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../../100-days-of-cybersecurity/day-01/linux/filesystem/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Python</span>
+                                                <span class="block mt-1">Linux File Sytem</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -301,6 +514,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "E Books", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Linux File Permissions", level: 4, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>

@@ -9,29 +9,34 @@
     <meta name="generator" content="Retype 3.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>E Books</title>
-    <meta name="title" content="E Books">
+    <title>Linux File Sytem</title>
+    <meta name="title" content="Linux File Sytem">
+    <meta name="description" content="Explore the essential directories and files within the Linux file system, understanding their roles and significance.">
 
     <!-- Canonical -->
-    <link rel="canonical" href="/resource/e-books/">
+    <link rel="canonical" href="/100-days-of-cybersecurity/day-01/linux/filesystem/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="/resource/e-books/">
-    <meta property="og:title" content="E Books">
+    <meta property="og:url" content="/100-days-of-cybersecurity/day-01/linux/filesystem/">
+    <meta property="og:title" content="Linux File Sytem">
+    <meta property="og:description" content="Explore the essential directories and files within the Linux file system, understanding their roles and significance.">
+    <meta property="og:image" content="https://cdn-images-1.medium.com/max/1100/1*sT7thq5vwczsGUCDYS2QJQ.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="/resource/e-books/">
-    <meta property="twitter:title" content="E Books">
+    <meta property="twitter:url" content="/100-days-of-cybersecurity/day-01/linux/filesystem/">
+    <meta property="twitter:title" content="Linux File Sytem">
+    <meta property="twitter:description" content="Explore the essential directories and files within the Linux file system, understanding their roles and significance.">
+    <meta property="twitter:image" content="https://cdn-images-1.medium.com/max/1100/1*sT7thq5vwczsGUCDYS2QJQ.png">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.779961456452" rel="stylesheet">
+    <link href="../../../../resources/css/retype.css?v=3.6.0.779961456452" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.779961456452" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.779961456452" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../../resources/js/config.js?v=3.6.0.779961456452" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../../resources/js/lunr.js?v=3.6.0.779961456452" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -46,7 +51,7 @@
                 <!-- Logo -->
                 <div class="flex items-center justify-between h-full py-2 md:w-75">
                     <div class="flex items-center px-2 md:px-6">
-                        <a id="docs-site-logo" href="../../" class="flex items-center leading-snug text-2xl">
+                        <a id="docs-site-logo" href="../../../../" class="flex items-center leading-snug text-2xl">
                             <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">NEODay</span>
                         </a>
                     </div>
@@ -214,14 +219,208 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="e-books" class="break-words">
+<doc-anchor-target id="linux-file-sytem" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#e-books">#</doc-anchor-trigger>
-        <span>E Books</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#linux-file-sytem">#</doc-anchor-trigger>
+        <span>Linux File Sytem</span>
     </h1>
 </doc-anchor-target>
+<div class="-mt-3 mb-12 flex flex-wrap text-sm text-gray-400 dark:text-dark-350 items-center">
+    <div>In&nbsp;</div>
+    <div><a href="../../../../categories/linux/">Linux</a>,&nbsp;</div>
+    <div><a href="../../../../categories/filesystem/">Filesystem</a></div>
+</div>
 
-                                
+<doc-anchor-target id="introduction">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#introduction">#</doc-anchor-trigger>
+        <span>Introduction</span>
+    </h3>
+</doc-anchor-target>
+<p>The Linux file system is the heart of any Unix-like operating system, crucial for users and system administrators. In this guide, we&#x27;ll explore the root directory and its subdirectories and files, unveiling their significance in the Linux ecosystem.</p>
+<p><figure class="content-center">
+    <img src="https://cdn-images-1.medium.com/max/1100/1*sT7thq5vwczsGUCDYS2QJQ.png" alt="Root Directory Structure">
+    <figcaption class="caption">Root Directory Structure</figcaption>
+</figure>
+</p>
+<doc-anchor-target id="bin-essential-system-binaries">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#bin-essential-system-binaries">#</doc-anchor-trigger>
+        <span>/bin (Essential system binaries)</span>
+    </h4>
+</doc-anchor-target>
+<p>The <code v-pre>/bin</code> directory contains fundamental system binaries:</p>
+<ul>
+<li><code v-pre>ls</code>: Lists directory contents.</li>
+<li><code v-pre>cp</code>: Copies files and directories.</li>
+<li><code v-pre>mv</code>: Moves or renames files and directories.</li>
+<li><code v-pre>rm</code>: Removes files and directories.</li>
+<li><code v-pre>mkdir</code>: Creates directories.</li>
+</ul>
+<doc-anchor-target id="boot-boot-related-files">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#boot-boot-related-files">#</doc-anchor-trigger>
+        <span>/boot (Boot-related files)</span>
+    </h4>
+</doc-anchor-target>
+<p>The <code v-pre>/boot</code> directory holds crucial files for the boot process:</p>
+<ul>
+<li><code v-pre>vmlinuz</code>: Contains the Linux kernel image.</li>
+<li><code v-pre>initrd</code>: Initial RAM disk image used during boot.</li>
+</ul>
+<doc-anchor-target id="dev-device-files">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#dev-device-files">#</doc-anchor-trigger>
+        <span>/dev (Device files)</span>
+    </h4>
+</doc-anchor-target>
+<p>The <code v-pre>/dev</code> directory contains device files:</p>
+<ul>
+<li><code v-pre>block</code>: Device files for block devices like hard drives.</li>
+<li><code v-pre>char</code>: Device files for character devices like keyboards.</li>
+</ul>
+<doc-anchor-target id="etc-system-wide-configuration-files">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#etc-system-wide-configuration-files">#</doc-anchor-trigger>
+        <span>/etc (System-wide configuration files)</span>
+    </h4>
+</doc-anchor-target>
+<p>The <code v-pre>/etc</code> directory stores system-wide configuration files:</p>
+<ul>
+<li><code v-pre>fstab</code>: Defines file system mount configurations.</li>
+<li><code v-pre>ssh</code>: Configuration files for SSH server.</li>
+<li><code v-pre>network</code>: Defines network settings.</li>
+</ul>
+<doc-anchor-target id="home-user-home-directories">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#home-user-home-directories">#</doc-anchor-trigger>
+        <span>/home (User home directories)</span>
+    </h4>
+</doc-anchor-target>
+<p>The <code v-pre>/home</code> directory stores user-specific home directories:</p>
+<ul>
+<li><code v-pre>.bashrc</code>: User&#x27;s Bash shell configuration.</li>
+<li><code v-pre>notes.txt</code>: Sample file for personal notes.</li>
+</ul>
+<doc-anchor-target id="lib-shared-libraries">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#lib-shared-libraries">#</doc-anchor-trigger>
+        <span>/lib (Shared libraries)</span>
+    </h4>
+</doc-anchor-target>
+<p>The <code v-pre>/lib</code> directory contains shared libraries crucial for software operation.</p>
+<doc-anchor-target id="media-mount-point-for-removable-media">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#media-mount-point-for-removable-media">#</doc-anchor-trigger>
+        <span>/media (Mount point for removable media)</span>
+    </h4>
+</doc-anchor-target>
+<p>The <code v-pre>/media</code> directory is where removable media is automatically mounted.</p>
+<doc-anchor-target id="mnt-temporary-mount-point">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#mnt-temporary-mount-point">#</doc-anchor-trigger>
+        <span>/mnt (Temporary mount point)</span>
+    </h4>
+</doc-anchor-target>
+<p>The <code v-pre>/mnt</code> directory is used for temporary external file system mounts.</p>
+<doc-anchor-target id="opt-optional-software-packages">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#opt-optional-software-packages">#</doc-anchor-trigger>
+        <span>/opt (Optional software packages)</span>
+    </h4>
+</doc-anchor-target>
+<p>The <code v-pre>/opt</code> directory is for optional software packages.</p>
+<doc-anchor-target id="proc-virtual-filesystem-for-process-information">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#proc-virtual-filesystem-for-process-information">#</doc-anchor-trigger>
+        <span>/proc (Virtual filesystem for process information)</span>
+    </h4>
+</doc-anchor-target>
+<p>The <code v-pre>/proc</code> directory provides real-time process information.</p>
+<doc-anchor-target id="root-root-users-home-directory">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#root-root-users-home-directory">#</doc-anchor-trigger>
+        <span>/root (Root user’s home directory)</span>
+    </h4>
+</doc-anchor-target>
+<p>The <code v-pre>/root</code> directory is the root user&#x27;s home directory.</p>
+<doc-anchor-target id="run-run-time-variable-data">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#run-run-time-variable-data">#</doc-anchor-trigger>
+        <span>/run (Run-time variable data)</span>
+    </h4>
+</doc-anchor-target>
+<p>The <code v-pre>/run</code> directory stores temporary runtime data.</p>
+<doc-anchor-target id="sbin-system-binaries-for-system-administration">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sbin-system-binaries-for-system-administration">#</doc-anchor-trigger>
+        <span>/sbin (System binaries for system administration)</span>
+    </h4>
+</doc-anchor-target>
+<p>The <code v-pre>/sbin</code> directory contains binaries for system administration.</p>
+<doc-anchor-target id="srv-service-data">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#srv-service-data">#</doc-anchor-trigger>
+        <span>/srv (Service data)</span>
+    </h4>
+</doc-anchor-target>
+<p>The <code v-pre>/srv</code> directory stores data related to system services.</p>
+<doc-anchor-target id="sys-kernel-related-files">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sys-kernel-related-files">#</doc-anchor-trigger>
+        <span>/sys (Kernel-related files)</span>
+    </h4>
+</doc-anchor-target>
+<p>The <code v-pre>/sys</code> directory contains kernel-related files.</p>
+<doc-anchor-target id="tmp-temporary-files">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#tmp-temporary-files">#</doc-anchor-trigger>
+        <span>/tmp (Temporary files)</span>
+    </h4>
+</doc-anchor-target>
+<p>The <code v-pre>/tmp</code> directory stores temporary files.</p>
+<doc-anchor-target id="usr-user-programs-and-data">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#usr-user-programs-and-data">#</doc-anchor-trigger>
+        <span>/usr (User programs and data)</span>
+    </h4>
+</doc-anchor-target>
+<p>The <code v-pre>/usr</code> directory contains user programs and data.</p>
+<doc-anchor-target id="var-variable-data-files">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#var-variable-data-files">#</doc-anchor-trigger>
+        <span>/var (Variable data files)</span>
+    </h4>
+</doc-anchor-target>
+<p>The <code v-pre>/var</code> directory contains variable data files.</p>
+<doc-anchor-target id="conclusion">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#conclusion">#</doc-anchor-trigger>
+        <span>Conclusion</span>
+    </h3>
+</doc-anchor-target>
+<p>Understanding the Linux file system structure is crucial. While most files shouldn&#x27;t be modified without proper knowledge, customization in <code v-pre>/etc</code> and <code v-pre>/home</code> can be done cautiously. Always back up to avoid unintended consequences.</p>
+
+                                <div class="flex items-center mt-6 mb-6 clear-both">
+                                    <span>
+                                        <a href="../../../../tags/">
+                                            <svg class="inline-block -mb-px mr-1.5 text-blue-500 dark:text-blue-400" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" overflow="visible" fill="currentColor"><g><path d="M21.3 9.88l-8.59-8.59C12.52 1.11 12.27 1 12 1H2c-.55 0-1 .45-1 1v10c0 .27.11.52.29.71l8.59 8.58c.57.57 1.32.88 2.12.88s1.55-.31 2.12-.88l7.17-7.17a3.009 3.009 0 00.01-4.24zm-1.42 2.82l-7.17 7.17c-.39.39-1.02.39-1.42 0L3 11.59V3h8.59l8.29 8.29c.39.39.39 1.03 0 1.41z" /><path d="M7.01 6C6.45 6 6 6.45 6 7s.45 1 1 1 1-.45 1-1-.44-1-.99-1z" /></g></svg>
+                                        </a>
+                                        <span class="mr-2"><a href="../../../../tags/linux/" class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 hover:bg-blue-100 dark:hover:bg-transparent dark:hover:border-blue-200 dark:hover:text-blue-200 transition-colors duration-200 ease-out h-6 px-2 text-xs rounded-md">
+                                    <span>linux</span>
+                                </a></span>
+                                        <span class="mr-2"><a href="../../../../tags/filesystem/" class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 hover:bg-blue-100 dark:hover:bg-transparent dark:hover:border-blue-200 dark:hover:text-blue-200 transition-colors duration-200 ease-out h-6 px-2 text-xs rounded-md">
+                                    <span>filesystem</span>
+                                </a></span>
+                                        <span class="mr-2"><a href="../../../../tags/directory-structure/" class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 hover:bg-blue-100 dark:hover:bg-transparent dark:hover:border-blue-200 dark:hover:text-blue-200 transition-colors duration-200 ease-out h-6 px-2 text-xs rounded-md">
+                                    <span>directory-structure</span>
+                                </a></span>
+                                        <span class="mr-2"><a href="../../../../tags/system-administration/" class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 hover:bg-blue-100 dark:hover:bg-transparent dark:hover:border-blue-200 dark:hover:text-blue-200 transition-colors duration-200 ease-out h-6 px-2 text-xs rounded-md">
+                                    <span>system-administration</span>
+                                </a></span>
+                                    </span>
+                                </div>
+                
                                 <!-- Required only on API pages -->
                                 <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
                             </div>
@@ -229,20 +428,20 @@
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../cve/cve-2022-0847/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../../100-days-of-cybersecurity/day-01/linux/permissions/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">CVE-​2022-​0847</span>
+                                                <span class="block mt-1">Linux File Permissions</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../resource/e-books/coding/python/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../../100-days-of-cybersecurity/day-01/linux/linux/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Python</span>
+                                                <span class="block mt-1">Linux for Penetration Testers</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -301,6 +500,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "E Books", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Linux File Sytem", level: 4, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
